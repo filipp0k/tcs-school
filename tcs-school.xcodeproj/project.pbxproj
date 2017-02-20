@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					146E4ACC1E5B6C9600EB4DE2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y2Y6B4TDXM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2Y6B4TDXM;
 				INFOPLIST_FILE = "tcs-school/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fil.tcs-school";
@@ -270,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2Y6B4TDXM;
 				INFOPLIST_FILE = "tcs-school/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fil.tcs-school";
