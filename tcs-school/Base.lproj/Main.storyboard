@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-3w-BEc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyW-yl-20t">
                                 <rect key="frame" x="26" y="323" width="323" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -31,14 +31,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Olf-3w-BEc" secondAttribute="trailing" constant="10" id="2c8-Ac-uxq"/>
-                            <constraint firstItem="Olf-3w-BEc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LLO-UA-GDL"/>
-                            <constraint firstItem="Olf-3w-BEc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dXG-0K-VBe"/>
-                            <constraint firstItem="Olf-3w-BEc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="yDW-XE-gF8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AyW-yl-20t" secondAttribute="trailing" constant="10" id="GKQ-aV-LG6"/>
+                            <constraint firstItem="AyW-yl-20t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="PD2-1R-Y0Q"/>
+                            <constraint firstItem="AyW-yl-20t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QgP-3o-pwe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="dXG-0K-VBe" id="kAy-Rh-xND"/>
+                        <outlet property="label" destination="AyW-yl-20t" id="Ci9-bs-gqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

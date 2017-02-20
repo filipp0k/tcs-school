@@ -12,9 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.label.text = "Здесь будет курс"
     }
-    @IBOutlet weak var label: NSLayoutConstraint!
+    @IBOutlet weak var label: UILabel!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
