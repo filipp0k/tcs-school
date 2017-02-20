@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.label.text = "Здесь будет курс"
     }
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var pickerFrom: UIPickerView!
+    
+    @IBOutlet weak var pickerTo: UIPickerView!
     @IBOutlet weak var label: UILabel!
 
     override func didReceiveMemoryWarning() {

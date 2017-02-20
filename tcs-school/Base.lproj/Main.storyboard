@@ -28,20 +28,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8Q-Eu-2Df" userLabel="Picker From">
+                                <rect key="frame" x="28" y="97" width="320" height="216"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgZ-AB-EcT" userLabel="Picker To">
+                                <rect key="frame" x="28" y="354" width="320" height="216"/>
+                            </pickerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-7B-a1V">
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xgZ-AB-EcT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmK-90-xU3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AyW-yl-20t" secondAttribute="trailing" constant="10" id="GKQ-aV-LG6"/>
                             <constraint firstItem="AyW-yl-20t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="PD2-1R-Y0Q"/>
                             <constraint firstItem="AyW-yl-20t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QgP-3o-pwe"/>
+                            <constraint firstItem="xgZ-AB-EcT" firstAttribute="top" secondItem="AyW-yl-20t" secondAttribute="bottom" constant="10" id="TOW-ka-63M"/>
+                            <constraint firstItem="Qtf-7B-a1V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UYh-2r-cGp"/>
+                            <constraint firstItem="X8Q-Eu-2Df" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dFs-bK-ItI"/>
+                            <constraint firstItem="AyW-yl-20t" firstAttribute="top" secondItem="X8Q-Eu-2Df" secondAttribute="bottom" constant="10" id="gYn-d7-dCa"/>
+                            <constraint firstItem="Qtf-7B-a1V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8x-Et-wr6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Qtf-7B-a1V" id="E0U-AZ-xGz"/>
                         <outlet property="label" destination="AyW-yl-20t" id="Ci9-bs-gqN"/>
+                        <outlet property="pickerFrom" destination="X8Q-Eu-2Df" id="7ZK-t4-Zoa"/>
+                        <outlet property="pickerTo" destination="xgZ-AB-EcT" id="t6A-yt-AML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>
