@@ -89,18 +89,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func requestCurrentCurrencyRate() {
         self.activityIndicator.startAnimating()
-        self.label.text = ""
+        //Чтобы пикеры не скакали можно оставлять текст на месте, просто меняя прозрачность:
+        self.label.alpha = 0
         let baseCurrencyIndex = self.pickerFrom.selectedRow(inComponent: 0)
         let toCurrencyIndex = self.pickerTo.selectedRow(inComponent: 0)
         let baseCurrency = self.currencies[baseCurrencyIndex]
+        //C помощью строки ниже я убрал баг, когда при удалении валюты она все равно выбиралась для парсера
         let toCurrency = self.currenciesExceptBase()[toCurrencyIndex]
         
-        print("baseCurrencyIndex \(baseCurrencyIndex) toCurrencyIndex \(toCurrencyIndex) \n baseCurrency \(baseCurrency) toCurrency \(toCurrency)")
+        //print("baseCurrencyIndex \(baseCurrencyIndex) toCurrencyIndex \(toCurrencyIndex) \n baseCurrency \(baseCurrency) toCurrency \(toCurrency)")
         
         self.retieveCurrencyRate(baseCurrency: baseCurrency, toCurrency: toCurrency) {
             [weak self] (value) in
             DispatchQueue.main.async {
                 if let strongSelf = self {
+                    strongSelf.label.alpha = 1
                     strongSelf.label.text = value
                     strongSelf.activityIndicator.stopAnimating()
                 }
