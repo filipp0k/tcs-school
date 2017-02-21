@@ -47,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 print("\(parsedJSON)")
                 if let rates = parsedJSON["rates"] as? Dictionary<String, Double>
                 {
-                    
+                    print(rates)
                     if let rate = rates[toCurrency] { value = "\(rate)" }
                     else { value = "No rate for currency \"\(toCurrency)\" found" }
                 } else { value = "No \"rates\" found" }
@@ -93,7 +93,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let baseCurrencyIndex = self.pickerFrom.selectedRow(inComponent: 0)
         let toCurrencyIndex = self.pickerTo.selectedRow(inComponent: 0)
         let baseCurrency = self.currencies[baseCurrencyIndex]
-        let toCurrency = self.currencies[toCurrencyIndex]
+        let toCurrency = self.currenciesExceptBase()[toCurrencyIndex]
+        
+        print("baseCurrencyIndex \(baseCurrencyIndex) toCurrencyIndex \(toCurrencyIndex) \n baseCurrency \(baseCurrency) toCurrency \(toCurrency)")
+        
         self.retieveCurrencyRate(baseCurrency: baseCurrency, toCurrency: toCurrency) {
             [weak self] (value) in
             DispatchQueue.main.async {
