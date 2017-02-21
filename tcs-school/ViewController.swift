@@ -77,6 +77,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         self.label.text = "Здесь будет курс"
         self.activityIndicator.hidesWhenStopped = true
+        self.requestCurrentCurrencyRate()
         self.pickerFrom.dataSource = self
         self.pickerTo.dataSource = self
         self.pickerFrom.delegate = self
@@ -86,7 +87,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func requestCurrentCurrencyRate() {
+        self.activityIndicator.startAnimating()
+        self.label.text = ""
         let baseCurrencyIndex = self.pickerFrom.selectedRow(inComponent: 0)
         let toCurrencyIndex = self.pickerTo.selectedRow(inComponent: 0)
         let baseCurrency = self.currencies[baseCurrencyIndex]
@@ -96,9 +99,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             DispatchQueue.main.async {
                 if let strongSelf = self {
                     strongSelf.label.text = value
+                    strongSelf.activityIndicator.stopAnimating()
                 }
             }
         }
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.requestCurrentCurrencyRate()
         if pickerView == pickerFrom {
             self.pickerTo.reloadAllComponents()
         }
