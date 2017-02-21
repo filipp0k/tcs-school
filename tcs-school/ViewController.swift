@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         dataTask.resume();
     }
     
-    func parseCurrencyRatesResponse(data: Data?, toCurrency: String?) -> String {
+    func parseCurrencyRatesResponse(data: Data?, toCurrency: String) -> String {
         var value : String = ""
         do {
             let json = try JSONSerialization.jsonObject(with: data!, options: []) as? Dictionary<String, Any>
@@ -47,7 +47,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 print("\(parsedJSON)")
                 if let rates = parsedJSON["rates"] as? Dictionary<String, Double>
                 {
-                    if let rate = rates[toCurrency!] { value = "\(rate)" }
+                    
+                    if let rate = rates[toCurrency] { value = "\(rate)" }
                     else { value = "No rate for currency \"\(toCurrency)\" found" }
                 } else { value = "No \"rates\" found" }
             }
@@ -82,8 +83,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.pickerTo.dataSource = self
         self.pickerFrom.delegate = self
         self.pickerTo.delegate = self
-        self.requestCurrenciesRates(baseCurrency: "USD") {
-            (data, error) in
+        self.requestCurrenciesRates(baseCurrency: "RUB") { (data, error) in
         }
     }
     
